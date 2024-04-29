@@ -2,32 +2,21 @@ import { useAppDispatch, useAppSelector } from "@/hooks/redux";
 import { getAuth, setAuth } from "@/redux/auth/slice";
 import { FC, useEffect } from "react";
 import LandingPage from "./landing-page";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/firebase/auth.config";
+import Spinner from "@/components/loaders/spinner";
 
 interface ProtectedRouteProps {}
 
 const ProtectedRoute: FC<ProtectedRouteProps> = ({}) => {
-  const dispatch = useAppDispatch();
+  const { user, isAuthenticated, loading } = useAppSelector(getAuth);
 
-  const { user, isAuthenticated } = useAppSelector(getAuth);
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        const { uid, displayName, email, emailVerified, photoURL } = user;
-        dispatch(
-          setAuth({
-            user: { uid, displayName, email, emailVerified, photoURL },
-          })
-        );
-      } else {
-        dispatch(setAuth({ user: null }));
-      }
-    });
-  }, []);
+  if (loading) {
+    return <Spinner />;
+  }
 
-  if (!user && !isAuthenticated) {
+  if (!user && !isAuthenticated && !loading) {
     return <LandingPage />;
   }
   return <Outlet />;

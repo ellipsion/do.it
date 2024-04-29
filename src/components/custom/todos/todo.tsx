@@ -22,7 +22,7 @@ const Todo: FC<TodoProps> = ({ task }) => {
 
   return (
     <div
-      className="flex items-center gap-x-5 bg-white rounded-lg mb-2 p-2"
+      className="flex items-center gap-x-5 bg-white rounded-lg mb-2 p-2 animate-fade-fast"
       key={task.id}
     >
       <Checkbox

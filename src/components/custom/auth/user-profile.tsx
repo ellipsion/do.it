@@ -3,12 +3,16 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { User } from "lucide-react";
+import { Loader2, User } from "lucide-react";
 import LogoutButton from "./logout-button";
 import { useAppSelector } from "@/hooks/redux";
 
 export const UserProfile = () => {
-  const { user } = useAppSelector((state) => state.auth);
+  const { user, loading } = useAppSelector((state) => state.auth);
+
+  if (loading) {
+    return <Loader2 className="animate-spin" />;
+  }
 
   if (!user) {
     return (

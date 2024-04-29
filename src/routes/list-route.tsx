@@ -1,26 +1,33 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useNavigation, useParams } from "react-router-dom";
 import TodoList from "@/components/custom/todos/todo-list";
 import { getListBySlug } from "@/redux/list/slice";
 import { useEffect } from "react";
-import { useAppDispatch } from "@/hooks/redux";
+import { useAppDispatch, useAppSelector } from "@/hooks/redux";
 import { setFilter } from "@/redux/todo/slice";
 
 const ListPage = () => {
   const dispatch = useAppDispatch();
+  const lists = useAppSelector((state) => state.lists.data);
   const { slug } = useParams();
   const list = getListBySlug(slug);
-  const navigate = useNavigate();
+  const navigation = useNavigation();
 
   useEffect(() => {
-    if (list) {
-      dispatch(setFilter(list));
-    } else {
-      navigate("/not-found");
+    if (lists.length > 0) {
+      if (list) {
+        dispatch(setFilter(list));
+      } else {
+        throw new Response("", {
+          status: 404,
+          statusText: "Not Found",
+        });
+      }
     }
-  }, [list]);
+    // throw Error("not found");
+  }, [list, lists]);
 
   return (
-    <div className="px-5 pt-3">
+    <div className="px-5 pt-3 animate-fade">
       <div>
         <h2 className="font-semibold text-2xl">
           {list?.name} {list?.emoji.native}

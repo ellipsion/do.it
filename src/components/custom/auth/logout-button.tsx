@@ -2,11 +2,14 @@ import { Button } from "@/components/ui/button";
 import { useAppDispatch } from "@/hooks/redux";
 import { logoutAsync } from "@/redux/auth/thunk";
 import { LogOut } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const LogoutButton = () => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const signOut = () => {
+    navigate("/");
     dispatch(logoutAsync());
   };
   return (

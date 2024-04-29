@@ -11,4 +11,5 @@ const firebaseConfig = {
   appId: ENV.VITE_APPID
 };
 
+
 export const app = initializeApp(firebaseConfig);

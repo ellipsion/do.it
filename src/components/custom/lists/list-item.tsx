@@ -22,7 +22,7 @@ const ListItem: FC<ListItemProps> = ({ list }) => {
   return (
     <div
       className={cn(
-        "flex items-center group mx-3 my-1 rounded text-xs text-black font-medium text-center gap-x-2  pl-3 transition-all hover:bg-gray-300/20",
+        "flex items-center group mx-3 my-1 rounded text-xs text-black font-medium text-center gap-x-2  pl-3 transition-all hover:bg-gray-300/20 animate-fade",
         isActive && "text-gray-700  bg-gray-200/30"
       )}
     >
