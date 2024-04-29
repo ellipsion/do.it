@@ -1,14 +1,11 @@
 import { FC, useState } from "react";
-import { Input } from "../input";
+import { Input } from "../common/input";
 import { useForm } from "react-hook-form";
 import Picker from "@emoji-mart/react";
 import data from "@emoji-mart/data";
 import { useAppDispatch } from "@/hooks/redux";
-import {
-  addListAsync,
-  setListLoading,
-  updateListAsync,
-} from "@/redux/listSlice";
+import { setListLoading } from "@/redux/list/slice";
+import { addListAsync, updateListAsync } from "@/redux/list/thunk";
 import { Emoji } from "@/types/emoji";
 import { List } from "@/types/list";
 import { Button } from "@/components/ui/button";

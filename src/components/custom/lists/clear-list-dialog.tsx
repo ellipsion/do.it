@@ -11,11 +11,12 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { useAppDispatch } from "@/hooks/redux";
-import { getTaskCount } from "@/redux/listSlice";
+import { getTaskCount } from "@/redux/list/slice";
 import { FC } from "react";
 import ListInfo from "./list-info";
 import { List } from "@/types/list";
-import { clearListAsync, setTodoLoading } from "@/redux/todoSlice";
+import { clearTodosInListAsync } from "@/redux/todo/thunk";
+import { setTodoLoading } from "@/redux/todo/slice";
 
 interface ClearListDialogProps {
   list: List;
@@ -26,7 +27,7 @@ const ClearListDialog: FC<ClearListDialogProps> = ({ list, close }) => {
   const dispatch = useAppDispatch();
   const handleDelete = () => {
     dispatch(setTodoLoading({ loading: true, action: "updating" }));
-    dispatch(clearListAsync({ listId: list.id }));
+    dispatch(clearTodosInListAsync({ listId: list.id }));
     close();
   };
   const count = getTaskCount(list.id);

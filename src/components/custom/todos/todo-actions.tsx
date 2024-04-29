@@ -9,9 +9,9 @@ import {
 import { Button } from "@/components/ui/button";
 import { MoreVertical } from "lucide-react";
 import { useAppDispatch } from "@/hooks/redux";
-import { deleteTodoAsync } from "@/redux/todoSlice";
+import { deleteTodoAsync } from "@/redux/todo/thunk";
 import { Task } from "@/types/task";
-import { editTask } from "@/redux/editSlice";
+import { editTask } from "@/redux/edit/slice";
 import { Emoji } from "@/types/emoji";
 
 interface TodoActionProps {

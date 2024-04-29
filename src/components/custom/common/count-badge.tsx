@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { getTaskCount } from "@/redux/listSlice";
+import { getTaskCount } from "@/redux/list/slice";
 import { List } from "@/types/list";
 import { cn } from "@/lib/utils";
 

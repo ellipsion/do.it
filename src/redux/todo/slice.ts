@@ -54,6 +54,9 @@ export const todoSlice = createSlice({
             toast.success("Task added");
             state.data.push(action.payload);
         })
+        .addCase(addTodoAsync.rejected, () => {
+            toast.error("There was an unknown error while processing the request");
+        })
 
         .addCase(updateTodoAsync.fulfilled, (state, action) => {
             toast.success("Task updated");

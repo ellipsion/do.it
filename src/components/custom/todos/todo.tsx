@@ -1,10 +1,11 @@
 import { FC } from "react";
 import { Task } from "@/types/task";
 import { useAppDispatch } from "@/hooks/redux";
-import { getListById } from "@/redux/listSlice";
+import { getListById } from "@/redux/list/slice";
 import { Checkbox } from "@/components/ui/checkbox";
-import { toggleComplete, toggleCompletedAsync } from "@/redux/todoSlice";
+import { toggleComplete } from "@/redux/todo/slice";
 import TodoActions from "./todo-actions";
+import { toggleCompletedAsync } from "@/redux/todo/thunk";
 
 interface TodoProps {
   task: Task;

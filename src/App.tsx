@@ -1,36 +1,28 @@
 import { FC } from "react";
-import {
-  createBrowserRouter,
-  Link,
-  Outlet,
-  RouterProvider,
-} from "react-router-dom";
-
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import DashboardLayout from "./layouts/dashboard-layout";
+import Home from "./routes/home";
+import ProtectedRoute from "./routes/protected-route";
+import ListPage from "./routes/list-route";
 // error message: There was an unknown error while processing the request.
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <div>
-        {" "}
-        <h1>Home</h1>
-        <Link to={"/test"}>test</Link>
-        <Outlet />
-      </div>
-    ),
+    element: <ProtectedRoute />,
     children: [
       {
-        index: true,
-        element: <h3>Outlet test</h3>,
-      },
-      {
-        path: "test",
-        element: (
-          <>
-            <Link to={"/"}>home</Link> <h3>Link test</h3>
-          </>
-        ),
+        element: <DashboardLayout />,
+        children: [
+          {
+            index: true,
+            element: <Home />,
+          },
+          {
+            path: "lists/:slug",
+            element: <ListPage />,
+          },
+        ],
       },
     ],
   },

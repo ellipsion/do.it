@@ -9,7 +9,7 @@ import {
 
 import TodoForm from "./todo-form";
 import { useAppSelector, useAppDispatch } from "@/hooks/redux";
-import { setTaskModal } from "@/redux/editSlice";
+import { setTaskModal } from "@/redux/edit/slice";
 import NewTodoButton from "./new-todo-btn";
 
 const AddTodoPopover: FC = () => {

@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/accordion";
 
 import { FC, useState } from "react";
-import { getListById } from "@/redux/listSlice";
+import { getListById } from "@/redux/list/slice";
 import { useAppSelector } from "@/hooks/redux";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { ScrollArea } from "@/components/ui/scroll-area";

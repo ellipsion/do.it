@@ -13,8 +13,6 @@ const Sidebar = () => {
       <div className="flex flex-col w-full h-full">
         <SidebarRoutes />
         <ListRoutes />
-        {/* <div className="w-full border-t my-5"></div>
-        <p className="text-sm text-gray-400 font-medium px-5">Ellipsion (Me)</p> */}
         <AddListPopover />
       </div>
       <div className="absolute bottom-0 flex justify-center w-full pb-20">

@@ -1,4 +1,4 @@
-import { getTodos } from "@/redux/todoSlice";
+import { getTodos } from "@/redux/todo/slice";
 import Todo from "./todo";
 import { Task } from "@/types/task";
 import { ScrollArea } from "@/components/ui/scroll-area";

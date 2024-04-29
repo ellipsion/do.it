@@ -1,6 +1,3 @@
-// import Image from "next/image";
-// import Link from "next/link";
-
 import { cn } from "@/lib/utils";
 import { FC } from "react";
 
@@ -17,8 +14,6 @@ const Logo: FC<LogoProps> = ({ size }) => {
   };
   return (
     <div className="">
-      {/* <Image height={60} width={100} alt="logo" src={"/logo.svg"} /> */}
-
       <h1
         className={cn(
           "text-xl font-semibold select-none",

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux";
-import { loginWithGoogleAsync } from "@/redux/auth/authActions";
+import { loginWithGoogleAsync } from "@/redux/auth/thunk";
 import { Loader2 } from "lucide-react";
 
 const GoogleLogin = () => {

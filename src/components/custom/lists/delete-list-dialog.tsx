@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { useAppDispatch } from "@/hooks/redux";
-import { deleteListAsync } from "@/redux/listSlice";
+import { deleteListAsync } from "@/redux/list/thunk";
 import { FC } from "react";
 import ListInfo from "./list-info";
 import { List } from "@/types/list";

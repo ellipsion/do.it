@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useAppDispatch } from "@/hooks/redux";
-import { logoutAsync } from "@/redux/auth/authActions";
+import { logoutAsync } from "@/redux/auth/thunk";
 import { LogOut } from "lucide-react";
 
 const LogoutButton = () => {

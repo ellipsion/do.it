@@ -1,20 +1,17 @@
 import { FC, useEffect, useState } from "react";
-import { Input } from "../input";
+import { Input } from "../common/input";
 import { useForm } from "react-hook-form";
 import { useAppDispatch, useAppSelector } from "@/hooks/redux";
 import { Emoji } from "@/types/emoji";
 import { findList } from "@/lib/list-utils";
-import {
-  addTodoAsync,
-  setTodoLoading,
-  updateTodoAsync,
-} from "@/redux/todoSlice";
-import { setTaskModal } from "@/redux/editSlice";
+import { addTodoAsync, updateTodoAsync } from "@/redux/todo/thunk";
+import { setTodoLoading } from "@/redux/todo/slice";
+import { setTaskModal } from "@/redux/edit/slice";
 import ListSelectAccordian from "./list-select-accordian";
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
 import { useParams } from "react-router-dom";
-import { getListBySlug } from "@/redux/listSlice";
+import { getListBySlug } from "@/redux/list/slice";
 
 const defaultEmoji: Emoji = {
   id: "no-list",
