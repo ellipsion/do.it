@@ -1,4 +1,4 @@
-import { useNavigate, useNavigation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import TodoList from "@/components/custom/todos/todo-list";
 import { getListBySlug } from "@/redux/list/slice";
 import { useEffect } from "react";
@@ -10,7 +10,6 @@ const ListPage = () => {
   const lists = useAppSelector((state) => state.lists.data);
   const { slug } = useParams();
   const list = getListBySlug(slug);
-  const navigation = useNavigation();
 
   useEffect(() => {
     if (lists.length > 0) {

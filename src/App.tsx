@@ -1,9 +1,5 @@
 import { FC, useEffect } from "react";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  useNavigate,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import DashboardLayout from "./layouts/dashboard-layout";
 import Home from "./routes/home";
 import ProtectedRoute from "./routes/protected-route";

@@ -1,10 +1,9 @@
-import { useAppDispatch, useAppSelector } from "@/hooks/redux";
-import { getAuth, setAuth } from "@/redux/auth/slice";
-import { FC, useEffect } from "react";
+import { useAppSelector } from "@/hooks/redux";
+import { getAuth } from "@/redux/auth/slice";
+import { FC } from "react";
 import LandingPage from "./landing-page";
-import { Outlet, useNavigate } from "react-router-dom";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "@/firebase/auth.config";
+import { Outlet } from "react-router-dom";
+
 import Spinner from "@/components/loaders/spinner";
 
 interface ProtectedRouteProps {}
