@@ -26,9 +26,9 @@ const ListPage = () => {
   }, [list, lists]);
 
   return (
-    <div className="px-5 pt-3 animate-fade">
+    <div className="px-3 md:px-5 pt-3 animate-fade">
       <div>
-        <h2 className="font-semibold text-2xl">
+        <h2 className="font-semibold text-2xl capitalize">
           {list?.name} {list?.emoji.native}
         </h2>
         <p className="font-medium text-lg text-gray-400">

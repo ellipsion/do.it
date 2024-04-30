@@ -2,7 +2,6 @@ import Navbar from "@/components/custom/navbar";
 import Sidebar from "@/components/custom/sidebar";
 import AddTodoPopover from "@/components/custom/todos/add-todo-popover";
 import useInitializeApp from "@/hooks/useInitializeApp";
-import { cn } from "@/lib/utils";
 import { Outlet } from "react-router-dom";
 
 const DashboardLayout = () => {

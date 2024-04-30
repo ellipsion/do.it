@@ -12,11 +12,11 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="px-5 pt-3">
+    <div className="px-3 md:px-5 pt-3">
       <div className="">
         <div className="">
           <h2 className="font-semibold text-lg md:text-2xl">
-            Good Morning, <br className="md:hidden" /> {user?.displayName}! 👋
+            Good morning, <br className="md:hidden" /> {user?.displayName}! 👋
           </h2>
           <p className="md:font-medium text-sm md:text-lg text-gray-400">
             Today, Wed 24 Apr 2024

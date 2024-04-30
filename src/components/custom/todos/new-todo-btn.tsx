@@ -23,7 +23,7 @@ const NewTodoButton = () => {
     <Button
       variant="default"
       size={"lg"}
-      className="rounded-full w-full mx-5 md:w-1/2 justify-start space-x-2 px-3 shadow-muted-foreground/40 shadow-lg md:shadow-none"
+      className="rounded-full w-full mx-5 md:w-1/2 justify-start space-x-2 md:px-3 px-4 h-12 md:h-10 shadow-muted-foreground/40 shadow-lg md:shadow-none"
     >
       <Plus size={15} />
       <span className="text-xs font-light hidden md:block">
