@@ -7,7 +7,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { MoreVertical } from "lucide-react";
+import { MoreVertical, PenBox, Trash2 } from "lucide-react";
 import { useAppDispatch } from "@/hooks/redux";
 import { deleteTodoAsync } from "@/redux/todo/thunk";
 import { Task } from "@/types/task";
@@ -35,22 +35,20 @@ const TodoActions: FC<TodoActionProps> = ({ task, emoji }) => {
         <MoreVertical size={15} />
       </DropdownMenuTrigger>
       <DropdownMenuContent className="rounded-xl bg-white/50 backdrop-blur-sm">
-        <DropdownMenuItem onClick={handleEdit}>
+        <DropdownMenuItem className="p-0" onClick={handleEdit}>
           <Button
             variant={"ghost"}
-            size={"sm"}
-            className="w-full justify-start"
+            className="w-full justify-start px-2 gap-x-2 font-light"
           >
-            edit
+            <PenBox size={18} strokeWidth={1} /> Edit
           </Button>
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={handleDelete}>
+        <DropdownMenuItem className="p-0 mt-1" onClick={handleDelete}>
           <Button
             variant={"ghost"}
-            size={"sm"}
-            className="w-full justify-start"
+            className="w-full justify-start px-2 gap-x-2 font-light text-red-500 hover:text-red-600"
           >
-            delete
+            <Trash2 size={18} strokeWidth={1} /> Delete
           </Button>
         </DropdownMenuItem>
       </DropdownMenuContent>

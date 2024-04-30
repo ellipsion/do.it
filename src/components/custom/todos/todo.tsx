@@ -22,7 +22,7 @@ const Todo: FC<TodoProps> = ({ task }) => {
 
   return (
     <div
-      className="flex items-center gap-x-5 bg-white rounded-lg mb-2 p-2 animate-fade-fast"
+      className="flex items-center gap-x-5 bg-white rounded-lg mb-3 p-2 animate-fade-fast"
       key={task.id}
     >
       <Checkbox
@@ -31,7 +31,7 @@ const Todo: FC<TodoProps> = ({ task }) => {
           handleToggleComplete(task.id, checked as boolean)
         }
       />
-      <label className="flex-1 md:font-medium text-gray-800 md:text-base text-sm">
+      <label className="flex-1 md:font-normal text-gray-800 text-sm">
         {task.title}
         {task.list && <span className="mx-3">{emoji?.native}</span>}
       </label>

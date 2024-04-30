@@ -37,6 +37,7 @@ const ListItem: FC<ListItemProps> = ({ list }) => {
         <span className="text-lg mr-1">{list.emoji?.native}</span>
         <span className="max-w-28 truncate">{list.name}</span>
       </button>
+
       <div className="md:opacity-0 group-hover:opacity-100 transition-opacity">
         {/* <ListActions listId={list.id} /> */}
         <EditListPopover list={list} />

@@ -6,7 +6,7 @@ import { UserProfile } from "../auth/user-profile";
 
 const Sidebar = () => {
   return (
-    <div className="h-full relative flex flex-col overflow-y-auto pb-10 bg-white m-4 shadow-sm rounded-lg">
+    <div className="h-full relative flex flex-col overflow-y-auto pb-10 bg-white md:m-4 shadow-sm rounded-lg">
       <div className="px-6 mt-8">
         <Logo size="sm" />
       </div>

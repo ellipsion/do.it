@@ -27,15 +27,15 @@ const AddTodoPopover: FC = () => {
       <Popover modal={true} open={open} onOpenChange={onOpenChange}>
         <PopoverAnchor className="max-w-4xl">
           <PopoverTrigger asChild>
-            <div className="w-full h-20 max-w-4xl">
-              <div className="flex items-center bg-gray-100/20 backdrop-blur h-full justify-center transition-all">
+            <div className="w-full md:h-20 max-w-4xl ">
+              <div className="flex items-center md:bg-gray-100/20 md:backdrop-blur h-full justify-center transition-all ">
                 <NewTodoButton />
               </div>
             </div>
           </PopoverTrigger>
         </PopoverAnchor>
 
-        <PopoverContent side={"top"} align="center" className="w-fit mb-5">
+        <PopoverContent side={"top"} align="center" className="w-fit mb-3 mr-5">
           <TodoForm />
         </PopoverContent>
       </Popover>

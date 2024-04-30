@@ -85,7 +85,7 @@ const TodoForm: FC = () => {
 
   return (
     <>
-      <div className="w-[400px] space-y-3">
+      <div className="md:w-[400px] space-y-3">
         <ListSelectAccordian value={listId} onSelect={onSelectValueChange} />
         <form onSubmit={handleFormSubmit} className="space-y-3">
           <div className="flex">

@@ -13,7 +13,9 @@ const NewTodoButton = () => {
         className="rounded-full w-full mx-5 md:w-1/2 space-x-2 px-3 opacity-70"
       >
         <LoaderCircle className="animate-spin" size={15} />
-        <span className="text-xs font-light">{action} task</span>
+        <span className="hidden md:block text-xs font-light">
+          {action} task
+        </span>
       </Button>
     );
 
@@ -21,10 +23,12 @@ const NewTodoButton = () => {
     <Button
       variant="default"
       size={"lg"}
-      className="rounded-full w-full mx-5 md:w-1/2 justify-start space-x-2 px-3"
+      className="rounded-full w-full mx-5 md:w-1/2 justify-start space-x-2 px-3 shadow-muted-foreground/40 shadow-lg md:shadow-none"
     >
       <Plus size={15} />
-      <span className="text-xs font-light">Create new task</span>
+      <span className="text-xs font-light hidden md:block">
+        Create new task
+      </span>
     </Button>
   );
 };
