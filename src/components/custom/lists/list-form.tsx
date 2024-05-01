@@ -88,6 +88,7 @@ const ListForm: FC<ListFormProps> = ({ close, list }) => {
             previewPosition={"none"}
             maxFrequentRows={1}
             perLine={8}
+            theme={"light"}
           />
         </div>
       </div>
